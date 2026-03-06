@@ -2,18 +2,16 @@ import java.util.*;
 public class PalindromeCheckerApp {
     public static void main(String[] args) {
         String word = "madam";
-        Queue<Character> queue = new LinkedList<>();
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> deque = new ArrayDeque<>();
+
         for (char ch : word.toCharArray()) {
-            queue.add(ch);
-            stack.push(ch);
+            deque.addLast(ch);
         }
         boolean isPalindrome = true;
-        while (!queue.isEmpty()) {
-            char fromQueue = queue.remove();
-            char fromStack = stack.pop();
-
-            if (fromQueue != fromStack) {
+        while (deque.size() > 1) {
+            char front = deque.removeFirst();
+            char rear = deque.removeLast();
+            if (front != rear) {
                 isPalindrome = false;
                 break;
             }
@@ -24,4 +22,5 @@ public class PalindromeCheckerApp {
             System.out.println(word + " is NOT a Palindrome");
         }
     }
+}
 }
