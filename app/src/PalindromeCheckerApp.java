@@ -1,5 +1,5 @@
 import java.util.*;
-public class QueueStackPalindrome {
+public class PalindromeCheckerApp {
     public static void main(String[] args) {
         String word = "madam";
         Queue<Character> queue = new LinkedList<>();
